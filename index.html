@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#A8442C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>JasperCounty.info — Monticello, GA Local Business Directory</title>
+  <meta name="description" content="Find the best local businesses in Jasper County, GA. Free directory for Monticello restaurants, shops, services, recreation, and more — including the Piedmont National Wildlife Refuge and Oconee National Forest.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "JasperCounty.info",
+  "url": "https://jaspercounty.info",
+  "description": "Free local business directory for Jasper County, Georgia. Find restaurants, shops, services, and more in Monticello, GA and throughout Jasper County.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://jaspercounty.info/index.html?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".speakable"]
+  }
+}
+  </script>
+  <style>
+
+    :root {
+      --primary: #A8442C;
+      --primary-dark: #7A3020;
+      --primary-light: #CC6646;
+      --primary-pale: #FAEDE9;
+      --dark: #1A1008;
+      --dark2: #2A1C10;
+      --white: #FFFFFF;
+      --gray-50: #FDF9F7;
+      --gray-100: #F5EDEA;
+      --gray-200: #E8D8D3;
+      --text: #1A1008;
+      --text-muted: #6B5249;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.14);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .site-header { background: var(--dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 20px; height: 64px; }
+    .site-logo { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 800; color: var(--white); white-space: nowrap; }
+    .site-logo span b { color: var(--primary-light); }
+    .header-nav { display: flex; align-items: center; gap: 4px; flex: 1; flex-wrap: wrap; }
+    .header-nav a { color: rgba(255,255,255,.8); font-size: .82rem; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: color .2s, background .2s; }
+    .header-nav a:hover { color: var(--white); background: rgba(255,255,255,.1); }
+    .header-nav .btn-add { margin-left: auto; background: var(--primary); color: var(--white) !important; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: .82rem; }
+    .header-nav .btn-add:hover { background: var(--primary-dark) !important; }
+    .burger { display: none; cursor: pointer; color: var(--white); font-size: 1.4rem; margin-left: auto; }
+    .site-footer { background: var(--dark); color: rgba(255,255,255,.75); margin-top: 60px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 48px 20px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .logo { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+    .footer-brand .logo b { color: var(--primary-light); }
+    .footer-brand p { font-size: .85rem; line-height: 1.6; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 16px; }
+    .footer-socials a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.1); display: grid; place-items: center; font-size: .9rem; }
+    .footer-socials a:hover { background: var(--primary); }
+    .footer-col h4 { color: var(--white); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.65); padding: 3px 0; }
+    .footer-col a:hover { color: var(--primary-light); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; font-size: .78rem; color: rgba(255,255,255,.45); }
+    @media(max-width:900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:640px) { .header-nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark2); padding: 12px 20px 20px; gap: 4px; } .header-nav.open { display: flex; } .header-nav .btn-add { margin-left: 0; text-align: center; } .burger { display: block; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } }
+
+    .hero { background: linear-gradient(135deg, var(--dark) 0%, #3D1A0A 50%, var(--primary-dark) 100%); color: var(--white); text-align: center; padding: 64px 20px 80px; position: relative; overflow: hidden; }
+    .hero::before { content:'🏛️'; font-size:180px; opacity:.05; position:absolute; right:-20px; top:-10px; line-height:1; pointer-events:none; }
+    .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+    .hero h1 span { color: var(--primary-light); }
+    .hero p { font-size: 1.05rem; opacity: .88; margin-bottom: 32px; max-width: 560px; margin-inline: auto; }
+    .search-bar { display: flex; max-width: 580px; margin: 0 auto; background: var(--white); border-radius: 50px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.25); }
+    .search-bar input { flex: 1; border: none; outline: none; padding: 14px 20px; font-size: 1rem; font-family: inherit; color: var(--text); }
+    .search-bar button { background: var(--primary); color: var(--white); border: none; padding: 14px 28px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+    .search-bar button:hover { background: var(--primary-dark); }
+    .hero-stats { display: flex; justify-content: center; gap: 36px; margin-top: 32px; flex-wrap: wrap; }
+    .stat .num { font-size: 1.6rem; font-weight: 800; color: var(--primary-light); }
+    .stat .lbl { font-size: .78rem; opacity: .7; text-transform: uppercase; letter-spacing: .05em; }
+    .towns-section { background: var(--white); border-bottom: 1px solid var(--gray-200); }
+    .towns-inner { max-width: 1200px; margin: 0 auto; padding: 28px 20px; text-align: center; }
+    .towns-inner h2 { font-size: .88rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-muted); margin-bottom: 16px; }
+    .towns-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .town-pill { display: flex; align-items: center; gap: 7px; background: var(--gray-50); border: 1.5px solid var(--gray-200); border-radius: 50px; padding: 9px 18px; font-size: .88rem; font-weight: 600; color: var(--text); transition: all .2s; }
+    .town-pill:hover { border-color: var(--primary); background: var(--primary-pale); color: var(--primary-dark); }
+    .section { max-width: 1200px; margin: 0 auto; padding: 48px 20px 0; }
+    .section-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .section-title::after { content:''; flex:1; height:2px; background: var(--gray-200); }
+    .cat-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+    .cat-pill { padding: 10px 18px; border: 2px solid var(--gray-200); background: var(--white); border-radius: 50px; font-size: .88rem; font-weight: 600; cursor: pointer; transition: all .2s; font-family: inherit; }
+    .cat-pill:hover, .cat-pill.active { border-color: var(--primary); background: var(--primary); color: var(--white); }
+    .biz-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(320px,1fr)); gap: 20px; }
+    .biz-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); display: flex; flex-direction: column; overflow: hidden; transition: transform .2s, box-shadow .2s; border-top: 3px solid var(--primary); }
+    .biz-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .biz-card.featured { border-top-color: #f59e0b; box-shadow: 0 4px 20px rgba(245,158,11,.18); position: relative; }
+    .featured-badge { position: absolute; top: 12px; right: 12px; background: linear-gradient(90deg,#f59e0b,#d97706); color: #fff; font-size: .68rem; font-weight: 800; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .05em; z-index: 2; }
+    .card-icon { font-size: 2rem; padding: 20px 20px 0; }
+    .card-body { padding: 12px 20px; flex: 1; }
+    .cat-badge { font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .04em; display: inline-block; margin-bottom: 6px; }
+    .card-name { font-size: 1.05rem; font-weight: 700; margin: 4px 0 6px; }
+    .card-name a { color: var(--text); }
+    .card-name a:hover { color: var(--primary); }
+    .card-desc { font-size: .84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+    .card-meta { display: flex; flex-direction: column; gap: 3px; margin-bottom: 10px; }
+    .card-addr { font-size: .8rem; color: var(--primary); font-weight: 500; }
+    .card-phone { font-size: .8rem; color: var(--text-muted); }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag { background: var(--primary-pale); color: var(--primary-dark); font-size: .72rem; padding: 3px 8px; border-radius: 20px; font-weight: 600; }
+    .card-cta { display: block; text-align: center; padding: 10px; background: var(--gray-50); color: var(--primary); font-weight: 700; font-size: .85rem; border-top: 1px solid var(--gray-200); transition: background .2s; }
+    .card-cta:hover { background: var(--primary); color: var(--white); }
+    .biz-card.featured .card-cta { background: #fffbeb; color: #b45309; border-top-color: #fde68a; }
+    .biz-card.featured .card-cta:hover { background: #d97706; color: #fff; }
+    #listCount { font-size: .88rem; color: var(--text-muted); margin-bottom: 16px; font-weight: 500; }
+    .cta-band { background: linear-gradient(90deg, var(--primary-dark), var(--primary)); color: var(--white); text-align: center; padding: 48px 20px; margin-top: 60px; }
+    .cta-band h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
+    .cta-band p { opacity: .9; margin-bottom: 24px; }
+    .btn-white { display: inline-block; background: var(--white); color: var(--primary); font-weight: 800; padding: 12px 32px; border-radius: 50px; font-size: 1rem; }
+    @media(max-width:600px){ .hero { padding:40px 16px 60px; } .biz-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo">🏛️&nbsp;<span><b>JasperCounty</b>.info</span></a>
+      <nav class="header-nav" id="mainNav">
+        <a href="/index.html">Directory</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/events.html">Events</a>
+        <a href="/deals.html">Deals</a>
+        <a href="/march-2026-business-spotlight.html">Spotlight</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+      </nav>
+      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+<section class="hero">
+  <h1 class="speakable">Find the Best of <span>Jasper County, GA</span> 🏛️</h1>
+  <p class="speakable">Your free local business directory for Monticello and all of Jasper County, Georgia — home of the My Cousin Vinny courthouse, the Piedmont National Wildlife Refuge, and a community worth knowing.</p>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search businesses…" autocomplete="off">
+    <button onclick="doSearch()">Search</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num">18+</div><div class="lbl">Businesses</div></div>
+    <div class="stat"><div class="num">11</div><div class="lbl">Categories</div></div>
+    <div class="stat"><div class="num">Free</div><div class="lbl">Always Free</div></div>
+  </div>
+</section>
+
+<div class="towns-section">
+  <div class="towns-inner">
+    <h2>🗺️ Serving All of Jasper County</h2>
+    <div class="towns-grid">
+      <div class="town-pill">🏛️ Monticello</div>
+      <div class="town-pill">🌾 Shady Dale</div>
+      <div class="town-pill">⛪ Hillsboro</div>
+      <div class="town-pill">🦅 Piedmont NWR</div>
+      <div class="town-pill">🌲 Oconee National Forest</div>
+      <div class="town-pill">🏡 Round Oak</div>
+      <div class="town-pill">🌿 Dennis Station</div>
+      <div class="town-pill">🛣️ Highway 11 Corridor</div>
+    </div>
+  </div>
+</div>
+
+<main class="section" id="categories">
+  <div class="section-title">Browse by Category</div>
+  <div class="cat-grid">
+    <button class="cat-pill active" data-cat="all">🏙️ All Businesses</button>
+    <button class="cat-pill" data-cat="Auto & Repair">🔧 Auto & Repair</button>
+    <button class="cat-pill" data-cat="Beauty & Salon">✂️ Beauty & Salon</button>
+    <button class="cat-pill" data-cat="Community">🏛️ Community</button>
+    <button class="cat-pill" data-cat="Construction">🏗️ Construction</button>
+    <button class="cat-pill" data-cat="Fitness">💪 Fitness</button>
+    <button class="cat-pill" data-cat="Food & Dining">🍽️ Food & Dining</button>
+    <button class="cat-pill" data-cat="Health & Medical">🏥 Health & Medical</button>
+    <button class="cat-pill" data-cat="Home Services">🏠 Home Services</button>
+    <button class="cat-pill" data-cat="Pet Care">🐾 Pet Care</button>
+    <button class="cat-pill" data-cat="Recreation">🌿 Recreation</button>
+    <button class="cat-pill" data-cat="Retail">🛒 Retail</button>
+  </div>
+  <div id="listCount">Showing 20 businesses</div>
+  <div class="biz-grid" id="bizGrid">
+    <article class="biz-card" data-cat="Recreation" data-name="piedmont national wildlife refuge" style="position:relative;">
+      
+      <div class="card-icon">🦅</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#A8442C18;color:#A8442C">Recreation</div>
+        <h3 class="card-name"><a href="/businesses/piedmont-national-wildlife-refuge.html">Piedmont National Wildlife Refuge</a></h3>
+        <p class="card-desc">A 35,000-acre national wildlife refuge in Jasper County offering hiking, birding, fishing, hunting, and wildlife ob…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 718 Juliette Rd, Round Oak, GA 31038</span>
+          <span class="card-phone">📞 (478) 986-5441</span>
+        </div>
+        <div class="card-tags"><span class="tag">Wildlife Refuge</span><span class="tag">Hiking</span><span class="tag">Birding</span><span class="tag">Free</span><span class="tag">Fishing</span></div>
+      </div>
+      <a href="/businesses/piedmont-national-wildlife-refuge.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Recreation" data-name="oconee national forest" style="position:relative;">
+      
+      <div class="card-icon">🌲</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#A8442C18;color:#A8442C">Recreation</div>
+        <h3 class="card-name"><a href="/businesses/oconee-national-forest-jasper.html">Oconee National Forest</a></h3>
+        <p class="card-desc">115,000 acres of national forest covering parts of Jasper County — fishing, hunting, camping, OHV trails, and recre…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 Oconee National Forest, Monticello, GA 31064</span>
+          <span class="card-phone">📞 (478) 752-8800</span>
+        </div>
+        <div class="card-tags"><span class="tag">National Forest</span><span class="tag">Camping</span><span class="tag">Hiking</span><span class="tag">Hunting</span><span class="tag">Fishing</span></div>
+      </div>
+      <a href="/businesses/oconee-national-forest-jasper.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Community" data-name="jasper county public library" style="position:relative;">
+      
+      <div class="card-icon">📚</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#2c3e5015;color:#2c3e50">Community</div>
+        <h3 class="card-name"><a href="/businesses/jasper-county-library.html">Jasper County Public Library</a></h3>
+        <p class="card-desc">Serving Jasper County with books, digital resources, free Wi-Fi, computer access, and community programs. Your tax …</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 319 W Washington St, Monticello, GA 31064</span>
+          <span class="card-phone">📞 (706) 468-6231</span>
+        </div>
+        <div class="card-tags"><span class="tag">Library</span><span class="tag">Free</span><span class="tag">Community</span><span class="tag">Digital Resources</span></div>
+      </div>
+      <a href="/businesses/jasper-county-library.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Community" data-name="jasper county school system" style="position:relative;">
+      
+      <div class="card-icon">🏫</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#2c3e5015;color:#2c3e50">Community</div>
+        <h3 class="card-name"><a href="/businesses/jasper-county-schools.html">Jasper County School System</a></h3>
+        <p class="card-desc">Jasper County's public school system serving K-12 students with a strong focus on academics, athletics, and prepari…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 85 Warrior Path, Monticello, GA 31064</span>
+          <span class="card-phone">📞 (706) 468-6335</span>
+        </div>
+        <div class="card-tags"><span class="tag">K-12</span><span class="tag">Schools</span><span class="tag">Education</span></div>
+      </div>
+      <a href="/businesses/jasper-county-schools.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Home Services" data-name="southern scapes" style="position:relative;">
+      
+      <div class="card-icon">🌿</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#c0922a15;color:#c0922a">Home Services</div>
+        <h3 class="card-name"><a href="/businesses/jasper-county-lawn-landscape.html">Southern Scapes</a></h3>
+        <p class="card-desc">Locally owned lawn care and landscaping serving Jasper County. Mowing, edging, trimming, mulching, pine straw, seas…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 Monticello, GA 31064</span>
+          <span class="card-phone">📞 (706) 468-4411</span>
+        </div>
+        <div class="card-tags"><span class="tag">Lawn Care</span><span class="tag">Landscaping</span><span class="tag">Mulching</span><span class="tag">Cleanups</span></div>
+      </div>
+      <a href="/businesses/jasper-county-lawn-landscape.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Pet Care" data-name="monticello veterinary services" style="position:relative;">
+      
+      <div class="card-icon">🐾</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#6d4c4115;color:#6d4c41">Pet Care</div>
+        <h3 class="card-name"><a href="/businesses/monticello-animal-clinic.html">Monticello Veterinary Services</a></h3>
+        <p class="card-desc">Full-service veterinary clinic in Monticello serving dogs, cats, and small animals. Wellness exams, vaccines, surge…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 412 S Colquitt St, Monticello, GA 31064</span>
+          <span class="card-phone">📞 (706) 468-2200</span>
+        </div>
+        <div class="card-tags"><span class="tag">Veterinarian</span><span class="tag">Dogs</span><span class="tag">Cats</span><span class="tag">Surgery</span></div>
+      </div>
+      <a href="/businesses/monticello-animal-clinic.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Retail" data-name="town-n-country farm & pet supply" style="position:relative;">
+      
+      <div class="card-icon">🌾</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#16a08515;color:#16a085">Retail</div>
+        <h3 class="card-name"><a href="/businesses/jasper-county-farm-supply.html">Town-N-Country Farm & Pet Supply</a></h3>
+        <p class="card-desc">Jasper County's one-stop farm store for livestock feed, seed, fertilizer, fencing, tools, workwear, and everything …</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 510 S Colquitt St, Monticello, GA 31064</span>
+          <span class="card-phone">📞 (706) 468-1870</span>
+        </div>
+        <div class="card-tags"><span class="tag">Farm Supply</span><span class="tag">Feed</span><span class="tag">Hardware</span><span class="tag">Workwear</span></div>
+      </div>
+      <a href="/businesses/jasper-county-farm-supply.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Fitness" data-name="bulldog gym 24/7 fitness" style="position:relative;">
+      
+      <div class="card-icon">💪</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#d3540015;color:#d35400">Fitness</div>
+        <h3 class="card-name"><a href="/businesses/jasper-county-fitness.html">Bulldog Gym 24/7 Fitness</a></h3>
+        <p class="card-desc">Monticello's community gym — cardio equipment, free weights, strength machines, and group fitness classes. Affordab…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 500 N Colquitt St, Monticello, GA 31064</span>
+          <span class="card-phone">📞 (706) 468-5599</span>
+        </div>
+        <div class="card-tags"><span class="tag">Gym</span><span class="tag">Fitness Classes</span><span class="tag">No Contract</span><span class="tag">Personal Training</span></div>
+      </div>
+      <a href="/businesses/jasper-county-fitness.html" class="card-cta">View Details →</a>
+    </article>
+  </div>
+  <div id="noResults" style="display:none;text-align:center;padding:60px 20px;color:var(--text-muted);">
+    <div style="font-size:3rem">🔍</div>
+    <p>No businesses found. Try a different search or category.</p>
+    <a href="/add-listing.html" style="color:var(--primary);font-weight:700">Add a business →</a>
+  </div>
+</main>
+
+<div class="cta-band">
+  <h2>Own a Business in Jasper County?</h2>
+  <p>Get found by your neighbors — list your business for free on JasperCounty.info. No credit card, no catch.</p>
+  <a href="/add-listing.html" class="btn-white">+ Add Free Listing</a>
+</div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">🏛️ <b>JasperCounty</b>.info</div>
+        <p>The free local business directory for Jasper County, GA — connecting Monticello and all of Jasper County with the businesses that make our community home.</p>
+        <div class="footer-socials"><a href="#" title="Facebook">📘</a><a href="#" title="Instagram">📷</a><a href="#" title="X">🐦</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="/index.html">Browse All</a>
+        <a href="/blog.html">Blog &amp; Guides</a>
+        <a href="/events.html">Events Calendar</a>
+        <a href="/deals.html">Deals &amp; Specials</a>
+        <a href="/march-2026-business-spotlight.html">Business Spotlight</a>
+      </div>
+      <div class="footer-col">
+        <h4>Business Owners</h4>
+        <a href="/add-listing.html">Add Free Listing</a>
+        <a href="/advertise.html">Advertise With Us</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="https://www.jaspercountyga.org" target="_blank">Jasper County Gov</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/new-to-monticello.html">New Resident Guide</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JasperCounty.info · Not affiliated with Jasper County Government or Jasper County Schools</span>
+      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('click',function(e){
+      var nav=document.getElementById('mainNav'),burger=document.querySelector('.burger');
+      if(nav&&!nav.contains(e.target)&&burger&&!burger.contains(e.target))nav.classList.remove('open');
+    });
+  </script>
+</body>
+</html>
+<script>
+  const pills = document.querySelectorAll('.cat-pill');
+  let activeCat = 'all', searchTerm = '';
+  pills.forEach(p => p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    filterCards();
+  }));
+  document.getElementById('searchInput').addEventListener('input', function(){ searchTerm = this.value.toLowerCase(); filterCards(); });
+  function doSearch(){ searchTerm = document.getElementById('searchInput').value.toLowerCase(); filterCards(); }
+  document.getElementById('searchInput').addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
+  function filterCards(){
+    const cards = document.querySelectorAll('.biz-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const catMatch = activeCat === 'all' || card.dataset.cat === activeCat;
+      const nameMatch = !searchTerm || card.dataset.name.includes(searchTerm);
+      const show = catMatch && nameMatch;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    document.getElementById('listCount').textContent = `Showing ${visible} business${visible!==1?'es':''}`;
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+  }
+  const params = new URLSearchParams(window.location.search);
+  const catParam = params.get('cat');
+  if(catParam){ const pill = Array.from(pills).find(p => p.dataset.cat === catParam); if(pill) pill.click(); }
+</script>

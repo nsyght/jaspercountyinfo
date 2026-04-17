@@ -1,0 +1,16 @@
+{
+  "name": "JasperCounty.info",
+  "short_name": "JasperCounty",
+  "description": "Free local business directory for Jasper County, GA",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#A8442C",
+  "theme_color": "#A8442C",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
